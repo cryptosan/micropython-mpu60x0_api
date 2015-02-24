@@ -130,30 +130,22 @@ class MPU6050_API():
 		# Check state of the device.
 		# If it's false, it will return the _ERROR code.
 		if self.is_dev_ready():
-			result = self._mpu.mem_read(buf,
-										self.get_addr(),
-										memaddr,
-										timeout=timeout,
-										addr_size=addr_size)
+			result = self._mpu.mem_read(buf, self.get_addr(), memaddr, timeout=timeout,	addr_size=addr_size)
 
 		return result
 
 
 	def _write(self, buf, memaddr, timeout=5000, addr_size=8):
 		"""
-        Write to the memory of a MPU60X0 chip
-        :param buf: Size of bytes to write to memory address
-        :param memaddr: The memory address of the device
-        :param timeout: Miliseconds to wait for the write
-        :param addr_size: Selects width of memory address size: 8 or 16 bits
-        :return: None
-        """
-        
+		Write to the memory of a MPU60X0 chip
+		:param buf: Size of bytes to write to memory address
+		:param memaddr: The memory address of the device
+		:param timeout: Miliseconds to wait for the write
+		:param addr_size: Selects width of memory address size: 8 or 16 bits
+		:return: None
+		"""
+
 		# Check state of the device.
 		# If it's false, this login won't do anything
 		if self.is_dev_ready():
-			self._mpu.mem_write(buf,
-								self.get_addr(),
-								memaddr,
-								timeout=timeout,
-								addr_size=addr_size)
+			self._mpu.mem_write(buf, self.get_addr(), memaddr, timeout=timeout, addr_size=addr_size)
