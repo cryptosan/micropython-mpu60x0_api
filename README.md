@@ -51,14 +51,14 @@ True
 |_write|None|buf, memaddr, timeout=5000, addr_size=8|
 
 ## API
-###``MPU6050_API(addr=reg.I2C_ADDRESS, bus=True, mode=True)``   
+####``MPU6050_API(addr=reg.I2C_ADDRESS, bus=True, mode=True)``   
 #####this is a constructor
 ``'addr'`` is the address of I2C device, default is 0x68 = regMap.I2C_ADDRESS   
 ``'bus'`` is that can select the I2C bus, ``True`` is X9/X10, ``False`` is Y9/Y10  
 ``'mode'`` is that can select the I2C mode, ``True`` is MASTER, ``False`` is SLAVE  
 
 --------------
-###``_dev_init(mode, addr=0x12, baudrate=400000, gencall=False)``
+####``_dev_init(mode, addr=0x12, baudrate=400000, gencall=False)``
 #####Init I2C object manually  
 ``'mode'`` is that can select I2C device mode, MASTER, or SLAVE  
 ``'addr'`` is 7-bit address (only sensible for a slave)  
@@ -66,46 +66,46 @@ True
 ``'gencall'`` is whether to support general call mode 
 
 --------------
-###``_dev_rm()``   
+####``_dev_rm()``   
 #####De-init I2C object  
 
 --------------
-###``is_device_ready()``   
+####``is_device_ready()``   
 #####Check the connection between pyBoard and MPU60X0 chip   
 return is ``True``, or ``False``  
 
 --------------
-###``get_addr()``  
+####``get_addr()``  
 #####Get the address of the MPU60X0 chip   
 return is ``int`` (The address of the device)   
 
 --------------
-###``set_addr(addr)``  
+####``set_addr(addr)``  
 #####Set the address of the MPU60X0 chip   
 #####* Be careful using this method  
 ``'addr'`` is the address to set  
 
 --------------
-###``get_timeout()``   
+####``get_timeout()``   
 #####Get the timeout value   
 return is ``int`` (The timeout value)   
 
 --------------
-###``set_timeout(timeout)``  
+####``set_timeout(timeout)``  
 #####Set the timeout value   
 ``'timeout'`` is the timeout value to set   
 
 --------------
-###``_read(buf, memaddr, timeout=5000, addr_size=8)``  
+####``_read(buf, memaddr, timeout=5000, addr_size=8)``  
 #####Read from the memory of a MPU60X0 chip  
 ``'buf'`` is size of bytes to read from memory address  
 ``'memaddr'`` is the memory address of the device   
-``'timeout'`` is miliseconds to wait for the read
+``'timeout'`` is miliseconds to wait for the read	
 ``'addr_size'`` is that can select width of memory address size: 8 or 16 bits  
 return is ``bytes`` (The read data)   
 
 --------------
-###``_write(buf, memaddr, timeout=5000, addr_size=8)``   
+####``_write(buf, memaddr, timeout=5000, addr_size=8)``   
 #####Write to the memory of a MPU60X0 chip   
 ``'buf'`` is size of bytes to write to memory address   
 ``'memaddr'`` is the memory address of the device   
