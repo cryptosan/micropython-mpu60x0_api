@@ -124,7 +124,7 @@ class MPU6050_API():
 		
 		# Check state of the device.
 		# If it's false, it will return the _ERROR code.
-		if self.is_dev_ready():
+		if self.is_device_ready():
 			result = self._mpu.mem_read(buf, 
 										self.get_addr(), 
 										memaddr, 
@@ -146,7 +146,7 @@ class MPU6050_API():
 
 		# Check state of the device.
 		# If it's false, this login won't do anything
-		if self.is_dev_ready():
+		if self.is_device_ready():
 			self._mpu.mem_write(buf, 
 								self.get_addr(), 
 								memaddr, 
