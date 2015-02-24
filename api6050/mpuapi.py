@@ -1,16 +1,11 @@
 """
 	micropython-mpu60x0_api
 	---------------------------------------------
-	This is a MPU60X0 API for micro-python board.
+	This is a MPU60X0 API for micro-python board by Yi Soo, An
 	
 	Compatibility
 		* MPU6000 chip
 		* MPU6050 chip
-
-	Usage.
-		from mpu60x0_api.6050api import MPU6050_API as mpuAPI
-		Or, inherit the MPU6050_API class.
-
 
 	Github : https://github.com/yisoo/micropython-mpu60x0_api
 """
@@ -130,7 +125,11 @@ class MPU6050_API():
 		# Check state of the device.
 		# If it's false, it will return the _ERROR code.
 		if self.is_dev_ready():
-			result = self._mpu.mem_read(buf, self.get_addr(), memaddr, timeout=timeout,	addr_size=addr_size)
+			result = self._mpu.mem_read(buf, 
+										self.get_addr(), 
+										memaddr, 
+										timeout=timeout, 
+										addr_size=addr_size)
 
 		return result
 
@@ -148,4 +147,8 @@ class MPU6050_API():
 		# Check state of the device.
 		# If it's false, this login won't do anything
 		if self.is_dev_ready():
-			self._mpu.mem_write(buf, self.get_addr(), memaddr, timeout=timeout, addr_size=addr_size)
+			self._mpu.mem_write(buf, 
+								self.get_addr(), 
+								memaddr, 
+								timeout=timeout, 
+								addr_size=addr_size)
